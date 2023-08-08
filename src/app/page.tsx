@@ -1,11 +1,12 @@
 'use client';
 
 import * as React from 'react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function HomePage() {
   return (
     <main>
-      <h1>Hello</h1>
+      <ConnectButton />
     </main>
   );
 }
