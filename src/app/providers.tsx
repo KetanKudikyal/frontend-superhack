@@ -1,36 +1,25 @@
 'use client';
 
-import * as React from 'react';
 import {
-  RainbowKitProvider,
+  connectorsForWallets,
   darkTheme,
   getDefaultWallets,
-  connectorsForWallets,
+  RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import {
   argentWallet,
-  trustWallet,
   ledgerWallet,
+  trustWallet,
 } from '@rainbow-me/rainbowkit/wallets';
+import * as React from 'react';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import {
-  mainnet,
-  polygon,
-  polygonMumbai,
-  optimism,
-  arbitrum,
-  zora,
-  goerli,
-} from 'wagmi/chains';
+import { baseGoerli, goerli, optimismGoerli } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
-    polygon,
-    optimism,
-    arbitrum,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true'
-      ? [goerli, polygonMumbai]
+      ? [optimismGoerli, baseGoerli]
       : []),
   ],
   [publicProvider()]
