@@ -13,7 +13,7 @@ import {
 } from '@rainbow-me/rainbowkit/wallets';
 import * as React from 'react';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { baseGoerli, goerli, optimismGoerli } from 'wagmi/chains';
+import { baseGoerli, optimismGoerli } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
@@ -71,7 +71,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           overlayBlur: 'small',
         })}
         modalSize='compact'
-        initialChain={goerli}
+        initialChain={optimismGoerli}
         showRecentTransactions
         appInfo={demoAppInfo}
         chains={chains}
