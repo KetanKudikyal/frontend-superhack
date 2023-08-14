@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { Option, optionClasses } from '@mui/base/Option';
 import { Popper } from '@mui/base/Popper';
 import {
@@ -186,7 +187,7 @@ export default function DestinationChainSelector({
   setRemoteChainId: (id: number) => void;
 }) {
   const { chain, chains } = useNetwork();
-  const [value, setValue] = React.useState<number | null>(chain?.id);
+  const [value, setValue] = React.useState<number | null>(chain?.id || null);
   const { switchNetwork } = useSwitchNetwork();
 
   React.useEffect(() => {
