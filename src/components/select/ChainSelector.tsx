@@ -7,7 +7,6 @@ import {
   SelectProps,
   SelectRootSlotProps,
 } from '@mui/base/Select';
-import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
 import { styled } from '@mui/system';
 import * as React from 'react';
 import { useNetwork, useSwitchNetwork } from 'wagmi';
@@ -64,7 +63,6 @@ const Button = React.forwardRef(function Button<
   return (
     <button type='button' {...other} ref={ref}>
       {other.children}
-      <UnfoldMoreRoundedIcon />
     </button>
   );
 });
