@@ -48,7 +48,7 @@ export default function HomePage() {
         args: [remoteChainId, toAddressBytes, qty, false, adapterParams],
       });
       const args = [
-        '0xd67D11499679CBcd33c0c2a7B792FC3d6aE628e9',
+        address,
         remoteChainId,
         toAddressBytes,
         qty,
