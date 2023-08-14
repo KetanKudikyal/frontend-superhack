@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { Option, optionClasses } from '@mui/base/Option';
 import { Popper } from '@mui/base/Popper';
 import {
@@ -182,7 +183,7 @@ const Label = styled('label')(
 
 export default function UnstyledSelectIntroduction() {
   const { chain, chains } = useNetwork();
-  const [value, setValue] = React.useState<number | null>(chain?.id);
+  const [value, setValue] = React.useState<number | null>(chain?.id || null);
   const { switchNetwork } = useSwitchNetwork();
 
   React.useEffect(() => {
